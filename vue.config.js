@@ -19,12 +19,27 @@ module.exports = {
       .set("@", resolve("src"))
       .set("_c", resolve("src/components"));
   },
+  configureWebpack:{
+    resolve: {
+      // 将 `.ts` 添加为一个可解析的扩展名。
+      extensions: ['.ts', '.js']
+    },
+    module: {
+      rules: [     
+       {
+         test: /\.ts$/,
+         loader: 'ts-loader',
+         options: { appendTsSuffixTo: [/\.vue$/] }
+       }
+      ]
+    }
+  },
   // 打包时不生成.map文件
   productionSourceMap: true,
   // 这里写你调用接口的基础路径，来解决跨域，如果设置了代理，那你本地开发环境的axios的baseUrl要写为 '' ，即空字符串
   devServer: {
     // proxy: 'localhost:3000'
     disableHostCheck: true,
-    port: 10012
+    port: 8081
   }
 };

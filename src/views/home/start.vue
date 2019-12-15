@@ -9,7 +9,7 @@
        </Select>      -->  
        <input v-focus />{{iconName}}
        <Button @click="go"></Button>
-       <Button v-if="show">显示</Button>
+       <Button v-if="show">{{ $t("hello") }}</Button>
     </header>
 </div>
 </template>
@@ -17,6 +17,7 @@
 import {Button,Select,Option} from 'iview'
 import {ComponentMapper} from '@/mapper-cls/index'
 const {componentMapper}={componentMapper:new ComponentMapper()}
+
 export default {
     data(){
         return{
@@ -38,7 +39,9 @@ export default {
 
            }
     },
-    
+    created() {
+       let obj={name:'sansan',age:'12'}
+    },
     mounted(){       
         var obj = {};
 var descriptor = {}; // 没有继承的属性

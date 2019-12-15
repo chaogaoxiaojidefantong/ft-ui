@@ -23,7 +23,10 @@ let routes = [
   {
     path: "/",
     name: "start",
-    component: () => import("@/views/home/start.vue")
+    component: () => import("@/views/home/start.vue"),
+    meta: {
+      needLogin: true//需要判断登录
+  }
   }
 ];
 export default routes;
