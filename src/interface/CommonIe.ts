@@ -5,29 +5,13 @@
  * @Last Modified time: 2020-01-05 18:52:56
  */
 namespace CommonIe {
-    export interface areaObjectIe{
-        readonly [index: string]: number|string;//属性可以是数字或者字符串,readonly让所有属性不会被修改
-        province:string;
-        city:string;
-        area:string;
-        province_code:number;
-        area_code:number;   
-        city_code:number
-    }
     /**
      * 错误参数的类型
      */
     export interface ErrParamIe{
         msg:string;//消息
     }
-    /**
-     * 上传文件后接口返回的数据
-     */
-    export interface UploadFileResultIe{
-        title:string;
-        content:string;
-        url:string;
-    }
+
 
     /**
      * 没啥用的接口，限制数据是数组
@@ -49,7 +33,7 @@ namespace CommonIe {
     export interface ResParamIe{
         code:number;
         msg?:string;
-        data?:any|UploadFileResultIe;
+        data?:any;
         count?:any;
         info?:any;
         symbol:string;

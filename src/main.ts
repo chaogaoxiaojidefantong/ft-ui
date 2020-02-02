@@ -13,13 +13,11 @@ import './registerServiceWorker'
 import './types/index.ts'
 import router from './router'
 import store from './store'
-import 'view-design/dist/styles/iview.css';
 import './libs/util';
 import './mixins/index';
 import i18n from './lang/index';
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
-import 'mavon-editor/dist/css/index.css'
 import {ftui} from './components/ft/index'
 import VueLazyload from 'vue-lazyload'
 import plugins from './plugins/index'
