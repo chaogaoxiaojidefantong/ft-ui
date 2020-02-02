@@ -1,0 +1,32 @@
+@import './custom.less';
+@top-bar-prefix-cls: ~"@{css-prefix}top-bar";
+.@{top-bar-prefix-cls}{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 10px;
+    height: 40px;
+    border-bottom: 1px solid #dddddd;
+    &-left{
+        font-size: @base-font-size;
+        font-family: @back-font-family ;
+    }
+    // &-left:before{
+    //     content: "\E679";
+    // }
+    &-left{
+        img{
+            width: 20px;
+            height: 20px;
+        }
+    }
+    &-middle{
+        font-weight: 700 !important;
+        font-size: 16px;
+    }
+    &-right{
+       img{
+           height: 20px !important;
+       }
+    }  
+}

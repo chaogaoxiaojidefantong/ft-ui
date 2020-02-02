@@ -10,36 +10,21 @@ const resolve = dir => {
  * 默认目录为 / 那么必须要将build的文件放到服务器上根目录
  * 假如默认目录为 /admin 那么必须在服务器上根目录新建一个admin目录，将build的文件放到里面
  */
+const BASE_URL = process.env.NODE_ENV === "production" ? "/" : "/";
 
 module.exports = {
-  publicPath: process.env.NODE_ENV === "production" ? "/" : "/",
+  publicPath: BASE_URL,
   lintOnSave: false, // 关闭烦人的eslint，如需打开请修改为true
   chainWebpack: config => {
     config.resolve.alias
       .set("@", resolve("src"))
       .set("_c", resolve("src/components"));
   },
-  configureWebpack:{
-    resolve: {
-      // 将 `.ts` 添加为一个可解析的扩展名。
-      extensions: ['.ts', '.js']
-    },
-    module: {
-      rules: [     
-       {
-         test: /\.ts$/,
-         loader: 'ts-loader',
-         options: { appendTsSuffixTo: [/\.vue$/] }
-       }
-      ]
-    }
-  },
   // 打包时不生成.map文件
   productionSourceMap: true,
   // 这里写你调用接口的基础路径，来解决跨域，如果设置了代理，那你本地开发环境的axios的baseUrl要写为 '' ，即空字符串
-  devServer: {
-    // proxy: 'localhost:3000'
+  devServer: {   
     disableHostCheck: true,
-    port: 8081
+    port: 8071
   }
 };

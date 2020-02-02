@@ -1,5 +1,29 @@
 {
-    "compilerOptions": {
-      "sourceMap": true
-    }
-  }
+  "compilerOptions": {
+    "baseUrl": ".",
+    "jsx": "preserve",
+    "target": "esnext",
+    "module": "esnext",
+    "strict": true,
+    "allowJs": true,
+    "noEmit": true,
+    "noImplicitThis": false,
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "importHelpers": true,
+    "experimentalDecorators": true,
+    "declaration":true,
+    "skipLibCheck":true,
+    "suppressImplicitAnyIndexErrors":false
+  },
+  "include": [
+    "types/**/*",
+    "src/**/*",
+  ],
+  "exclude": [
+    "**/*.spec.ts",
+    "**/*.spec.js",
+    "node_modules"
+  ]
+}

@@ -1,0 +1,45 @@
+@import './public/margin-padding.less';
+@import './public/flex.less';
+@import './public/width-height.less';
+@import './public/font.less';
+// Prefix
+@css-prefix : ft-;
+
+//base
+@body-background : #fff;
+@gray: #f0f0f0;
+@green:#1eaa81;
+@blueDeep:rgb(45, 104, 246);
+@greyDeep:#999999FF;//深棕色
+
+@back-font-family :cuIcon;
+@base-font-size :20px;
+@base-font-weight :500;
+@b-font-size:14px;
+//input
+@input-padding-left:10px;
+
+
+//button type color
+@warning-bg:#FFC14B1A;
+@warning-co:#FFC14BFF;
+
+.hover-pointer{
+    cursor: pointer;
+}
+
+
+.inputPassword{
+    .width350();
+    .height36();
+}
+
+//小字号棕色字体
+.b-grey(){
+    color: @greyDeep;
+    font-size: @b-font-size;
+}
+.maohao{
+    color: @greyDeep;
+    font-size: @b-font-size;
+}

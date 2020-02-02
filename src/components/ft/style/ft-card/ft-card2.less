@@ -1,0 +1,15 @@
+@import '../custom';
+@card2-prefix-cls: ~"@{css-prefix}card2";
+.@{card2-prefix-cls}{
+    background-color: #f5f8ff;
+    border: 1px solid #e5e9f2;
+    border-radius:4px;
+    justify-content:flex-start;
+    min-width: 68px;
+    display: flex;
+    &-b{//超出后省略号换行
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    overflow: hidden;
+    }
+}

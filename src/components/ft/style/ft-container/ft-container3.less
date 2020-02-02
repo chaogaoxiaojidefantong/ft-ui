@@ -1,0 +1,14 @@
+@import '../custom';
+@container3-prefix-cls: ~"@{css-prefix}container3";
+.@{container3-prefix-cls}{
+    position: relative;
+    &--bg{
+        position: absolute;
+        z-index: 0; 
+        top: 0px;          
+    }
+    &--content{
+        position: absolute;
+        z-index: 1;
+    }
+}

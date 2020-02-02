@@ -1,11 +1,17 @@
-import Cookies from "js-cookie";
-import config from "@/config/config";
-//保存token到cookie里
-export const setToken = token => {
-  Cookies.set("token", token, config);
-};
+import Cookies from 'js-cookie'
+import config from '../config/config'
+import {stringUtil} from '../components/ft/index'
+  export const setToken=(token)=>{
+    if(token){
+      token=stringUtil.randomMd(token);
+    }      
+    Cookies.set('userToken',token,{expires:config.cookieExpires});
+  }
 
-//获取cookie里的token
-export const getToken = () => {
-  return Cookies.get("token");
-};
+  export const getToken=()=>{
+    let mdToken=Cookies.get('userToken');
+    if(mdToken){
+      return stringUtil.randomMdDe(mdToken);
+    }
+      return null;
+  }

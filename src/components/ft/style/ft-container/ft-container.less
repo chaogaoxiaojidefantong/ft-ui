@@ -1,0 +1,18 @@
+@import '../custom';
+@container-prefix-cls: ~"@{css-prefix}container";
+.@{container-prefix-cls}{
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: row;
+    flex:1;
+    flex-basis:auto;//是默认的
+    //处理兼容性
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    -webkit-box-sizing: border-box;
+    min-height: 100vh;
+    align-items: center;
+}

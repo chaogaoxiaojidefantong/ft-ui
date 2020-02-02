@@ -1,0 +1,16 @@
+@import '../custom.less';
+@submenu-prefix-cls: ~"@{css-prefix}submenu";
+.@{submenu-prefix-cls}{
+    display: flex;
+    width: 100px;
+    align-items: center;
+    justify-content: center;
+    color: #53627c;
+    cursor: pointer;
+    font-weight: 300;
+    border-top: 2px solid white;
+    &:hover{
+        border-top: 2px solid #2D68F6FF;
+        box-sizing: border-box;
+    }
+}

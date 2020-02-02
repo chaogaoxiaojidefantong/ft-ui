@@ -1,0 +1,26 @@
+@import './custom.less';
+@card-prefix-cls: ~"@{css-prefix}card";
+.@{card-prefix-cls}{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    img{
+        width: 56px;
+        height: 56px;
+    }
+    &-img{
+        & >div{
+        align-items: center;
+       padding-right: 28px;
+        display: flex;
+        flex-direction: column;
+        b{
+            color: #666666FF;
+            font-size: 14px;
+            font-weight: 400;
+        }    
+        }
+        
+    }
+}
