@@ -1,6 +1,6 @@
 <template>
   <div v-clipboard:copy="content" v-clipboard:success="onCopy" :class="classes">
-    <img src="../../assets/copy.png" />
+    <slot><img src="../../assets/copy.png" /></slot>   
   </div>
 </template>
 <script>

@@ -21,7 +21,7 @@ import numberUtil from './utils/common/numberUtil'
 import fileUtil from './utils/fileUtil'
 import EleTableUtil from './utils/ele/EleTableUtil';
 import {FtHeader} from './component/ft-header/index'
-import {FtP1,FtP2,FtP3,FtP4,FtP5,FtP6} from './component/ft-p/index'
+import {FtP1,FtP2,FtP3,FtP4,FtP5,FtP6,FtP7} from './component/ft-p/index'
 const ftComponents = [
     FtInput,
     FtButton,
@@ -48,7 +48,8 @@ const ftComponents = [
     FtP3,
     FtP4,
     FtP5,
-    FtP6
+    FtP6,
+    FtP7
 ]
 
 const ftui = function(Vue:any, opts = {}) {

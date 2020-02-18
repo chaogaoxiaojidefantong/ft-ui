@@ -32,6 +32,22 @@ const userRoute =
             name: 'componentLine',
             component: ()=>import('../views/home/component/line.vue'),
         },
+        {
+            path: '/component/copy',
+            name: 'componentCopy',
+            component: ()=>import('../views/home/component/copy.vue'),
+        },
+        {
+            path: '/component/divider',
+            name: 'componentDivider',
+            component: ()=>import('../views/home/component/divider.vue'),
+        },
+        {
+            path: '/component/line2',
+            name: 'componentLine2',
+            component: ()=>import('../views/home/component/line2.vue'),
+        }
+
     ]
 },
 ]

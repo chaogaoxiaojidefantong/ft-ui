@@ -13,14 +13,6 @@ export default {
       type: String,
       default: "rgb(45, 104, 246)"
     },
-    // width: {
-    //   type: String,
-    //   default: "80px"
-    // },
-    // height:{
-    //     type: String,
-    //     default: "25px"
-    // },
     color:{
          type: String,
         default: "white"

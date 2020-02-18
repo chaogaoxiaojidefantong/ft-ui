@@ -30,7 +30,8 @@ export default {
      props:{
        title:{//标题
            type:String,
-           default:''
+           default:'',
+           required:true
        },
        placeholder:{
          type:String,

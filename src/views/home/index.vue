@@ -14,9 +14,15 @@
           <p class="title-p" >组件</p>
         </article>
         <article>
+          <ft-p7 >Basic</ft-p7>
           <ft-p6 class="hover-pointer" @click="pushPage('componentCascader')">cascader 地区级联</ft-p6>
-          <ft-p6 class="hover-pointer" @click="pushPage('componentContainer3')">container3 容器</ft-p6>
-          <ft-p6 class="hover-pointer" @click="pushPage('componentLine')">line 行样式</ft-p6>        
+          <ft-p6 class="hover-pointer" @click="pushPage('componentContainer3')">container3 容器</ft-p6>         
+          <ft-p6 class="hover-pointer" @click="pushPage('componentCopy')">copy 复制</ft-p6> 
+          <ft-p6 class="hover-pointer" @click="pushPage('componentDivider')">divider 分割线</ft-p6> 
+          <ft-p7 >Form</ft-p7>
+          <ft-p6 class="hover-pointer" @click="pushPage('componentLine')">line 行样式</ft-p6> 
+          <ft-p6 class="hover-pointer" @click="pushPage('componentLine2')">line2 密码框</ft-p6>
+          <!-- <ft-p6 class="hover-pointer" @click="pushPage('componentLine')" v-for="n in 50" :key="n">line 行样式</ft-p6>              -->
         </article>
       </ft-container4>
       <section class="index--content--right ">
