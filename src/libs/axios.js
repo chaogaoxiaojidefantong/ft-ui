@@ -2,21 +2,22 @@ import axios from "axios";
 import qs from 'qs';
 import {getToken} from '@/libs/util';
 import {objUtil} from '@/components/ft/index.ts'
-import user  from '../store/module/user'
 class HttpRequest{
     constructor(baseUrl){
         this.baseUrl=baseUrl;
     }
     getInsideConfig () {
         const config = {
-          withCredentials:true,
+          withCredentials:false,
           baseURL: this.baseUrl,
           paramsSerializer: (params)=> {
             if(params.levelToken){
                 delete params.levelToken
             }else{
               const token={token:getToken()}; 
-              params={...params,...token};
+              if(token.token){
+                params={...params,...token};
+              }              
             }          
             return qs.stringify(params);
           },
@@ -28,13 +29,6 @@ class HttpRequest{
       }      
       interceptor(axiosInstance){
         axiosInstance.interceptors.request.use(config=>{
-            if(!config.data.leaveToken){
-            const token={token:getToken()}; 
-            if(token.token){
-              config.data={...config.data,...token};
-            }               
-            }
-            delete config.data.leaveToken   
             config.data=objUtil.deleteNull(config.data); //删除参数里为空的值
             config.data = qs.stringify(config.data);//转对象为url拼接的类型            
             return config;
@@ -70,14 +64,17 @@ class HttpRequest{
      */
     filterConfig(config){
       let data=config.data
-        if(data.levelCredentials){
+        if(Reflect.get(data,'withCredentials')){
                config.withCredentials=false;
                delete data.levelCredentials
         }      
         if(data.responseType){        
             config.responseType=data.responseType
             delete data.responseType;
-        }  
+        }
+         if(getToken()){
+           data.token=getToken();
+         } 
         config.data=data;      
         return config;
     }

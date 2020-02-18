@@ -1,24 +1,17 @@
 
 import {axios} from '../libs/api.request'
-import UserIe from '../interface/UserIe';
-
+import UserIe from 'src/interface/UserIe';
 /**
  * UserMapper类的接口
  */
 interface UserMapperIeTest{
-    sendMsg(data:{moile:string}):any;
+    
 }
 
-
  class UserMapper implements UserMapperIeTest{
-
-    /**
-     * 发送手机验证码
-     * @param data 
-     */
-    sendMsg(data:{moile:string}):any{
+    login(data:UserIe.LoginParamIe):any{
         return axios.request({
-            url: "/api/v1/sendMsg",
+            url: "/User/login",
             method: "post",
             data: data
         });

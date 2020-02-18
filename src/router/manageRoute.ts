@@ -12,7 +12,7 @@ const manageRoute=
 [
     {
         path: '/mg',
-        name: 'mgindexHome',
+        name: 'mgIndex',
         component:()=>import('../views/manage/index.vue'),
         beforeEnter: (to:any, from:any, next:any)=> {        
             if(!getToken()){
@@ -21,7 +21,14 @@ const manageRoute=
             else{
                 next();
             }
-          }
+          },
+          childRen:[
+            {
+              path: 'component/edit',
+              name: 'mgIndexComponentEdit',
+              component:()=>import('../views/manage/component/edit.vue'),
+            }
+          ]
     }
 ]
 export default manageRoute;

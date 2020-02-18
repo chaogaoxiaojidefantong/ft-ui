@@ -31,14 +31,10 @@ namespace CommonIe {
      * 返回参数的类型
      */
     export interface ResParamIe{
-        code:number;
-        msg?:string;
-        data?:any;
-        count?:any;
-        info?:any;
-        symbol:string;
-        [name: string]: any;//可定义其他的属性，但是上面已有的几个也得照规范
-        status?:number
+       data:any,
+       msg:string,
+       ok:boolean,
+       status:number
     }
 
 

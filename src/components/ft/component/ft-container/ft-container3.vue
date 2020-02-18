@@ -15,11 +15,13 @@ export default {
     props:{
         width:{
              type: String,
-             default: "default"
+             default: "unset",
+             required:true
         },
         height:{
              type: String,
-             default: "default"
+             default: "unset",
+             required:true
         }
     },
     computed:{

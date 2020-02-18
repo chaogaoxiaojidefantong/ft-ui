@@ -65,4 +65,4 @@
         return str;
     }
 }
-export default new StringUtil();
+export  {StringUtil};

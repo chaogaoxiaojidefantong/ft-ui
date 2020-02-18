@@ -1,4 +1,5 @@
- import stringUtil from './common/stringUtil'
+ import {StringUtil} from './common/stringUtil'
+ const stringUtil=new StringUtil();
  class ObjUtil{
    //验证对象里的字符串是否有空值,true为有，false为没有
     verifyObj(obj:any){

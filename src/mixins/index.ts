@@ -7,12 +7,17 @@
  * @FilePath: \engine_vuenew\src\mixins\index.ts
  */
 import Vue from 'vue';
-import {stringUtil} from '../components/ft/index'
+import {StringUtil} from '../components/ft/index'
 import {systemUtil} from '../components/ft/index'
 import {deepCopy} from '../components/ft/index'
+import { createNamespacedHelpers } from 'vuex'
+import userUtil from '../libs/userUtil';
+const stringUtil=new StringUtil();
+const {  mapActions:userActions } = createNamespacedHelpers('user')
 Vue.mixin({
     data(){
-        return{
+        return{  
+            user:''        
         }
     },
     created(){
@@ -21,10 +26,12 @@ Vue.mixin({
              let hash=location.hash.substring(2);    
             location.replace('#/h5/' + hash);           
         }
+        this.user=userUtil.getUser();
     },
-    mounted(){
+    mounted(){       
     },
     methods:{
+        ...userActions(['loginActions']),
         /**
          * 成功的提示
          * @param mes 
@@ -50,6 +57,16 @@ Vue.mixin({
                 obj[item]=''
               })
         },
+        filterCodeArr(arr:Array<any>){
+            let arrRes:Array<any>=[]
+               arr.forEach(str=>{
+               arrRes.push(str.split(/\n/));
+               }) 
+               return arrRes;
+        },
+        filterCodeString(str:string):Array<string>{
+            return str.split(/\n/);
+        },
         /**
          * 结果的通知，200显示成功，其他显示失败
          */
@@ -64,5 +81,18 @@ Vue.mixin({
                   this.$message.error(msg);    
             }
         },
+        /**
+         * 暂停2秒后执行
+         */
+        timeOutGo(fuc){
+            
+        },
+        /**
+         * 页面跳转
+         * @param routerName 页面的路由名
+         */
+        pushPage(routerName:string){
+            this.$router.push({name:routerName});
+        }
     }
 })

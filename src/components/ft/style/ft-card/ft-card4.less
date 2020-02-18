@@ -1,0 +1,26 @@
+@import '../custom';
+@card4-prefix-cls: ~"@{css-prefix}card4";
+.@{card4-prefix-cls}{  
+    border: 1px solid #ebebeb;
+    margin-top: 20px;
+    &-pattern{
+        background-color: white;
+    }
+    &-code{
+        
+        padding-top: 20px;
+        background-color: rgb(250, 250, 250);
+    }
+    &-button{
+        border: 1px solid #ebebeb;
+        background-color: white;      
+        article{
+            width: 100%;
+                .flexAround();
+                p{
+                margin: 10px 0px 10px 0px;
+            }           
+            
+        }       
+    }
+}

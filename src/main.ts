@@ -6,7 +6,6 @@
  * @Description: In User Settings Edit
  * @FilePath: \engine_vuenew\src\main.ts
  */
-
 import Vue from 'vue'
 import App from './App.vue'
 import './registerServiceWorker'
@@ -18,13 +17,14 @@ import './mixins/index';
 import i18n from './lang/index';
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
-import {ftui} from './components/ft/index'
 import VueLazyload from 'vue-lazyload'
 import plugins from './plugins/index'
 import VueClipboard from 'vue-clipboard2'
 import './directives'
 import moment from 'moment'
 import VueQr from 'vue-qr'
+import {ftui} from './components/ft/index'
+Vue.use(ftui);
 Vue.use(VueQr);
 import VueAppend from 'vue-append'
 Vue.use(VueAppend)
@@ -38,7 +38,6 @@ Vue.use(VueLazyload, {
   attempt: 1
 })
 Vue.use(ElementUI);
-Vue.use(ftui);
 
 // 时间过滤器
 Vue.filter('dateFilter', (input:any, format:any = 'YYYY/MM/DD') => {

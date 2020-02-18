@@ -7,7 +7,7 @@
      </div>
      <b class="maohao" v-if="maohaoRes">:</b> 
     <div :class="rightClasses">
-      <slot name="right"></slot>
+      <slot ></slot>
     </div>
   </div>
 </template>

@@ -1,19 +1,38 @@
-/*
- * @Author: your name
- * @Date: 2019-12-04 12:24:44
- * @LastEditTime : 2019-12-22 10:36:19
- * @LastEditors  : Please set LastEditors
- * @Description: In User Settings Edit
- * @FilePath: \engine_vuenew\src\router\userRoute.ts
- */
 //此路由放置pc端客户端的页面
 const userRoute =
 [      
     {
     path: '/',
-    redirect: '/engine',
     name: 'index',
     component: ()=>import('../views/home/index.vue'),
+    redirect: { name: 'installIndex' },
+    children:[
+        {
+        path: '/install/index',
+        name: 'installIndex',
+        component: ()=>import('../views/home/install/index.vue'),
+        },
+        {
+            path: '/install/start',
+            name: 'installStart',
+            component: ()=>import('../views/home/install/start.vue'),
+        },
+        {
+            path: '/component/cascader',
+            name: 'componentCascader',
+            component: ()=>import('../views/home/component/cascader.vue'),
+        },
+        {
+            path: '/component/container3',
+            name: 'componentContainer3',
+            component: ()=>import('../views/home/component/container3.vue'),
+        },
+        {
+            path: '/component/line',
+            name: 'componentLine',
+            component: ()=>import('../views/home/component/line.vue'),
+        },
+    ]
 },
 ]
 

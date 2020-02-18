@@ -1,6 +1,7 @@
 import Cookies from 'js-cookie'
 import config from '../config/config'
-import {stringUtil} from '../components/ft/index'
+import {StringUtil} from '../components/ft/index'
+const stringUtil=new StringUtil();
   export const setToken=(token)=>{
     if(token){
       token=stringUtil.randomMd(token);

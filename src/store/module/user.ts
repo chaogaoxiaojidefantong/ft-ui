@@ -1,10 +1,12 @@
 
 import userMapper from '../../mapper/userMapper'
-
-
+import UserIe from 'src/interface/UserIe';
+import CommonIe from 'src/interface/CommonIe'
+import {setToken} from '../../libs/util'
+import config from '../../config/config'
+import userUtil from '../../libs/userUtil';
 const user = {
     namespaced: true,
-    // plugins: [createPersistedState()],
     state: {
 
     },
@@ -12,18 +14,17 @@ const user = {
 
     },
     actions: {
-        //获取验证码
-        sendMsg({ commit }: any, param: any) {
-            return new Promise((resolve, reject) => {
-                userMapper.sendMsg(param).then((res: any) => {
+        loginActions({},data:UserIe.LoginParamIe){
+            return new Promise((resolve,reject)=>{
+                userMapper.login(data).then((res:CommonIe.ResParamIe)=>{
+                    setToken(res.data.token);
+                    userUtil.saveUser(res.data.user);
                     resolve(res.msg);
-                }, (err: any) => {
-                    reject(err.msg)
+                },(err:any)=>{
+                    reject(config.errMsg);
                 })
             })
-        }
-       
-
+        } 
     }
 }
 export default user;

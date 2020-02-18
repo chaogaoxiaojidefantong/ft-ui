@@ -9,7 +9,7 @@
     </div>
 </template>
 <style lang="less" scoped>
-    @import url("../../style/ft-card/ft-card2.less");
+    @import url("../../style/ft-card/ft-card2");
 </style>
 <script>
 //小卡片，名字加x

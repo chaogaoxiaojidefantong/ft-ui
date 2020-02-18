@@ -1,5 +1,5 @@
 <template>
-    <div :class="classes">
+    <div :class="classes">     
         <button :class="[type ? 'ft-button--' + type : '',buttonClasses]" @click="goClick" :style="buttonStyle"><slot></slot></button>
     </div>
 </template>
@@ -39,7 +39,7 @@ export default {
     },
     type:{
        type: String,
-       default: "default"
+       default: ""
     },
     padding:{
       type: String,
