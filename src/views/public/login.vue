@@ -35,6 +35,9 @@ export default Vue.extend({
             password:''
         }
     },
+    mounted(){
+        
+    },
     methods:{
         login(){
             let data:UserIe.LoginParamIe={userEmail:this.email,userPwd:this.password}

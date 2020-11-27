@@ -30,7 +30,7 @@
     "vue-lazyload": "^1.3.3",
     "vue-property-decorator": "^8.3.0",
     "vue-qr": "^2.2.1",
-    "vue-router": "^3.1.3",
+    "vue-router": "^3.1.6",
     "vue2-editor": "^2.10.2",
     "vuex": "^3.0.1",
     "vuex-persistedstate": "^2.7.0"
@@ -56,7 +56,6 @@
     "> 1%",
     "last 2 versions"
   ],
-  "repository": "https://gitee.com/mlkj2018/engine_vuenew.git",
   "author": "ylw <759646095@qq.com>",
   "license": "MIT"
 }

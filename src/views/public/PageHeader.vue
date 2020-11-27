@@ -1,6 +1,6 @@
 <template>
     <div class="flexBetween">
-        <b>ft组件库</b>
+        <b>ftui组件库</b>
         <!-- <input type="text" placeholder="搜索文档"/> -->
         <div></div>
         <div>           

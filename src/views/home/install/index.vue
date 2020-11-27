@@ -7,6 +7,7 @@
             <ft-p3>npm i ftui -S</ft-p3>
             <!-- <ft-p3 v-for="n in 50" :key="n">npm i ftui -S</ft-p3> -->
         </ft-card3> 
+        
     </div>
 </template>
 <script lang="ts">

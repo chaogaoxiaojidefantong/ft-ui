@@ -10,8 +10,8 @@ const resolve = dir => {
  * 默认目录为 / 那么必须要将build的文件放到服务器上根目录
  * 假如默认目录为 /admin 那么必须在服务器上根目录新建一个admin目录，将build的文件放到里面
  */
-const BASE_URL = process.env.NODE_ENV === "production" ? "/" : "/";
-
+const BASE_URL = process.env.NODE_ENV === "production" ? "/dist3/" : "/";
+console.log(BASE_URL+'BASE_URL')
 module.exports = {
   publicPath: BASE_URL,
   lintOnSave: false, // 关闭烦人的eslint，如需打开请修改为true

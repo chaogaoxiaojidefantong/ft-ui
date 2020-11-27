@@ -64,13 +64,15 @@
         label="回调参数">
       </el-table-column>
     </el-table>
+    <img  src="http://localhost:8081/File/read?session=component&page=cascader"/>
   </div>
 </template>
 <script lang="ts">
 import Vue from "vue";
 import { FtCascader } from "ftui";
 import fileMapper from "../../../mapper/FileMapper";
-interface getArrIe {
+
+interface getArrIe { 
   area: string;
   area_code: number;
   city: string;

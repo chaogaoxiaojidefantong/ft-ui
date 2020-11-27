@@ -21,9 +21,11 @@
 <script lang="ts">
 import Vue from 'vue'
 import fileMapper from '../../../mapper/FileMapper'
+import cookie from "js-cookie";
 export default Vue.extend({
     mounted(){
         this.getData();
+        cookie.set("name","sansan");
     },
      data(){
         return{
