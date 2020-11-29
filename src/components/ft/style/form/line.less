@@ -1,0 +1,15 @@
+@import '../custom.less';
+@line-prefix-cls: ~"@{css-prefix}line";
+.@{line-prefix-cls}{
+    display: flex;
+    &-left{ 
+        display: flex;
+        justify-content: space-between;      
+        & >b{
+            .b-grey();
+        }
+    }
+    &-right{
+        margin-left: 15px;
+    }
+}

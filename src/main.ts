@@ -17,13 +17,12 @@ import './mixins/index';
 import i18n from './lang/index';
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
-import VueLazyload from 'vue-lazyload'
 import plugins from './plugins/index'
 import VueClipboard from 'vue-clipboard2'
 import './directives'
-import moment from 'moment'
 import VueQr from 'vue-qr'
-import {ftui} from './components/ft/index'
+import {ftui} from 'ftui'
+import "ftui/dist/ftui.css"
 Vue.use(ftui);
 Vue.use(VueQr);
 import VueAppend from 'vue-append'
@@ -31,27 +30,7 @@ Vue.use(VueAppend)
 VueClipboard.config.autoSetContainer = true
 Vue.use(VueClipboard)
 Vue.use(plugins);
-Vue.use(VueLazyload, {
-  preLoad: 1,
-  error: 'http://47.106.172.81:7795/common/loadding.gif',
-  loading: 'http://47.106.172.81:7795/common/loadding.gif',
-  attempt: 1
-})
 Vue.use(ElementUI);
-
-// 时间过滤器
-Vue.filter('dateFilter', (input:any, format:any = 'YYYY/MM/DD') => {
-  return moment(input*1000).format(format)
-})
-Vue.filter('timeFilter', (input:any, format:any = 'YYYY/MM/DD HH:mm:ss') => {
-  return moment(input * 1000).format(format)
-})
-Vue.filter('hoursFilter', (input:any, format:any = ' HH:mm') => {
-  return moment(input * 1000).format(format)
-})
-Vue.filter('yearFilter', (input:any, format:any = 'YYYY年MM月DD') => {
-  return moment(input * 1000).format(format)
-})
 Vue.config.productionTip = false
 const vue=new Vue({
   i18n,

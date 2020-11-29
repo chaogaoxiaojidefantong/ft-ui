@@ -1,0 +1,31 @@
+@import './custom.less';
+@button-prefix-cls: ~"@{css-prefix}button";
+.@{button-prefix-cls}{ 
+    box-sizing: border-box;
+    display: inline-block;
+    button{
+        cursor: pointer;
+        box-sizing: border-box;
+    }
+    &--warning{
+        background-color: @warning-bg !important;
+        color: @warning-co !important;
+        border-width: unset !important;
+        border: 1px solid @warning-co;
+        &:hover{
+            background-color: #E6A23C !important;
+            border: 1px solid #E6A23C;
+            color: #FFF !important;
+        }
+    }
+    &--primary{
+        background-color: white !important;   
+        border: 1px solid @greyDeep !important;
+        color: black !important;
+        &:hover{
+            background-color: #2D68F6 !important;   
+            color: white !important;
+            border: 1px solid #2D68F6;
+        }   
+    }
+}
