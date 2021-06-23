@@ -14,7 +14,7 @@ const BASE_URL = process.env.NODE_ENV === "production" ? "/ftuivue/" : "/";
 console.log(BASE_URL+'BASE_URL')
 module.exports = {
   publicPath: BASE_URL,
-  lintOnSave: false, // 关闭烦人的eslint，如需打开请修改为true
+  lintOnSave: false, // 关闭eslint，如需打开请修改为true
   chainWebpack: config => {
     config.resolve.alias
       .set("@", resolve("src"))
@@ -25,6 +25,15 @@ module.exports = {
   // 这里写你调用接口的基础路径，来解决跨域，如果设置了代理，那你本地开发环境的axios的baseUrl要写为 '' ，即空字符串
   devServer: {   
     disableHostCheck: true,
-    port: 8071
+    port: 8071,
+    proxy: {
+      [process.env.VUE_APP_BASE_API]: {
+        target: 'http://47.112.235.58:8103',
+        changeOrigin: true,
+        pathRewrite: {
+          ['^' + process.env.VUE_APP_BASE_API]: ''
+        }
+      }
+    }
   }
 };

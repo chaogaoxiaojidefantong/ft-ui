@@ -6,13 +6,13 @@ export  interface ConfigIe{
    failCode:number//后台返回失败的验证码
    errMsg:string,//错误返回信息
    acceptType:string,//图片上传接收的类型
-   nodeDev:string,
+   nodeDev:any,
    nodePro:string
 }
  class Config implements ConfigIe{
   readonly dev:string='http://localhost:8091/'
   readonly pro:string="http://47.106.172.81:7800/"
-  readonly nodeDev='http://localhost:8103/'
+  readonly nodeDev=process.env.VUE_APP_BASE_API
   readonly nodePro='/nodebackend'
   readonly cookieExpires:number=1/6
   readonly successCode:number=200
