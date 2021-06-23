@@ -1,4 +1,3 @@
-
 import FtInput from './component/input.vue'
 import FtButton from './component/button.vue'
 import FtTopBar from './component/top-bar.vue'
