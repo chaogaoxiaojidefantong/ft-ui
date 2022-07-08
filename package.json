@@ -19,7 +19,7 @@
     "ftui": "^0.5.2",
     "html2canvas": "^1.0.0-rc.5",
     "js-cookie": "^2.2.1",
-    "moment": "^2.24.0",
+    "moment": "^2.29.4",
     "qrcodejs2": "0.0.2",
     "register-service-worker": "^1.6.2",
     "ts-jest": "^24.1.0",
